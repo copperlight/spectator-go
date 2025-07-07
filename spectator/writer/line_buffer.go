@@ -140,7 +140,7 @@ func (lb *LineBuffer) flushLocked() {
 		return
 	}
 
-	lb.logger.Infof("Flushing %d buffers with %d lines (%d bytes)", len(lb.buffers), lb.lineCount, lb.currentSize)
+	lb.logger.Debugf("Flushing %d buffers with %d lines (%d bytes)", len(lb.buffers), lb.lineCount, lb.currentSize)
 	for _, line := range lb.buffers {
 		lb.writer.Write(line)
 	}
